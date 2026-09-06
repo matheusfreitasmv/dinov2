@@ -1,0 +1,35 @@
+# vits14_smoke_test.yaml
+
+dino:
+  head_n_prototypes: 65536
+  head_bottleneck_dim: 256
+
+ibot:
+  separate_head: true
+  head_n_prototypes: 65536
+
+train:
+  batch_size_per_gpu: 4
+  dataset_path: ImageNet:split=TRAIN
+  centering: sinkhorn_knopp
+  OFFICIAL_EPOCH_LENGTH: 100
+
+student:
+  arch: vit_small
+  patch_size: 14
+  drop_path_rate: 0.0
+  ffn_layer: swiglufused
+  block_chunks: 1
+
+teacher:
+  momentum_teacher: 0.994
+
+optim:
+  epochs: 2
+  weight_decay_end: 0.2
+  base_lr: 2.0e-04
+  warmup_epochs: 1
+  layerwise_decay: 1.0
+
+crops:
+  local_crops_size: 98
