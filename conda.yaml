@@ -1,4 +1,4 @@
-name: dinov2
+name: env_dinov2
 channels:
   - conda-forge
   - defaults

@@ -25,7 +25,7 @@ teacher:
   momentum_teacher: 0.994
 
 optim:
-  epochs: 2
+  epochs: 100
   weight_decay_end: 0.2
   base_lr: 2.0e-04
   warmup_epochs: 1
